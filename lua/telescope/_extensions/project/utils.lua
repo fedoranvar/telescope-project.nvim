@@ -80,6 +80,7 @@ end
 -- Standardized way of storing project to file
 M.store_project = function(file, project)
   local line = project.title .. "=" .. project.path .. "=" .. project.activated .. "\n"
+  vim.cmd('mks ' .. vim.fn.stdpath('data') .. '/session/' .. project.title)
   file:write(line)
 end
 
